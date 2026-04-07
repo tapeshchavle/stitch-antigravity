@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXUS_AI | KINETIC_MONOLITH</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "on-secondary-fixed-variant": "#064f53",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#3b2f00",
+                        "surface-container": "#201f1f",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed": "#74f5ff",
+                        "on-surface-variant": "#b9cacb",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#fed83a",
+                        "secondary-fixed-dim": "#95d1d6",
+                        "surface-dim": "#131313",
+                        "inverse-primary": "#00696f",
+                        "on-primary-container": "#006a71",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-lowest": "transparent",
+                        "on-primary-fixed-variant": "#004f54",
+                        "outline-variant": "#3a494b",
+                        "surface-tint": "#00dbe7",
+                        "tertiary-fixed": "#ffe173",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#554500",
+                        "tertiary-fixed-dim": "#e8c423",
+                        "secondary-fixed": "#b1edf2",
+                        "primary": "#e1fdff",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-fixed-dim": "#00dbe7",
+                        "on-primary-fixed": "#002022",
+                        "surface-container-highest": "#353534",
+                        "on-tertiary-fixed": "#221b00",
+                        "primary-container": "#00f2ff",
+                        "on-tertiary-container": "#725e00",
+                        "on-secondary": "#00363a",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#87c2c7",
+                        "secondary": "#95d1d6",
+                        "on-primary": "#00363a",
+                        "outline": "#849495",
+                        "surface-variant": "#353534",
+                        "tertiary": "#fff6e4",
+                        "background": "transparent",
+                        "surface": "transparent",
+                        "secondary-container": "#0b5156",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-fixed": "#002022"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Space Grotesk"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: transparent;
+            color: #e5e2e1;
+            overflow-x: hidden;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(53, 53, 52, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .cyan-glow {
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.15);
+        }
+        .cyan-glow-text {
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+        .monolith-bg {
+            background: radial-gradient(circle at center, rgba(0, 242, 255, 0.05) 0%, rgba(19, 19, 19, 1) 70%);
+        }
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TOP NAVIGATION SHELL -->
+<nav class="fixed top-0 w-full h-16 bg-neutral-950/40 backdrop-blur-xl z-50 flex justify-between items-center px-8 shadow-[0_0_20px_rgba(0,242,255,0.05)] border-b border-white/5">
+<div class="text-2xl font-bold tracking-[-0.02em] text-cyan-400 font-headline uppercase">
+            NEXUS_AI
+        </div>
+<div class="hidden md:flex items-center gap-12 font-space-grotesk tracking-tighter text-sm">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 hover:text-cyan-300 transition-colors duration-300" href="#">CORE</a>
+<a class="text-neutral-400 hover:text-cyan-300 transition-colors duration-300" href="#">NEURAL</a>
+<a class="text-neutral-400 hover:text-cyan-300 transition-colors duration-300" href="#">LOGS</a>
+<a class="text-neutral-400 hover:text-cyan-300 transition-colors duration-300" href="#">NETWORK</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-neutral-400 hover:text-cyan-400 transition-all">
+<span class="material-symbols-outlined">settings_input_component</span>
+</button>
+<button class="text-neutral-400 hover:text-cyan-400 transition-all">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+</div>
+</nav>
+<!-- KINETIC MONOLITH HERO -->
+<main class="relative min-h-screen pt-16 flex flex-col overflow-hidden">
+<!-- 3D Monolith Representation -->
+<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+<div class="relative w-[500px] h-[700px] flex items-center justify-center overflow-hidden pointer-events-none">
+<!-- Abstract Neural Graphics -->
+<!-- HUD Overlays -->
+<div class="absolute inset-0 p-8 flex flex-col justify-between pointer-events-none z-20">
+<div class="flex justify-between items-start">
+<div class="label-sm font-bold tracking-widest text-primary-container">CORE_ACTIVE</div>
+<div class="text-[10px] text-on-surface-variant font-mono">00:44:12:09</div>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent"></div>
+<div class="flex justify-between items-end">
+<div class="text-[10px] text-on-surface-variant font-mono">SYST_0X_FF_00</div>
+<div class="label-sm font-bold tracking-widest text-primary-container">SYNC_ESTABLISHED</div>
+</div>
+</div>
+</div>
+</div>
+<!-- HERO CONTENT OVERLAY -->
+<div class="relative z-10 flex-1 grid grid-cols-12 px-12 items-center">
+<!-- Left Editorial Title -->
+<div class="col-span-12 md:col-span-5 flex flex-col gap-8">
+<div class="space-y-4">
+<div class="label-sm tracking-[0.4em] text-primary-container font-medium uppercase opacity-80">Autonomous Engine v4.0</div>
+<h1 class="text-7xl md:text-9xl font-extrabold leading-[0.85] tracking-tighter text-on-surface">
+                        THE<br/>KINETIC<br/><span class="text-primary-container">MONOLITH</span>
+</h1>
+</div>
+<p class="text-lg text-on-surface-variant max-w-md font-light leading-relaxed">
+                    Decentralized neural processing units engineered for extreme latency reduction. Experience the weight of data carved from obsidian.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 font-bold tracking-tighter hover:shadow-[0_0_30px_#00f2ff] transition-all flex items-center gap-3">
+                        INITIALIZE_CORE <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="glass-panel border border-white/10 text-on-surface px-8 py-4 font-medium hover:bg-white/5 transition-all">
+                        DOCUMENTATION
+                    </button>
+</div>
+</div>
+<!-- Right Technical Data HUD -->
+<div class="hidden md:flex col-span-7 flex-col items-end gap-6 h-full justify-center">
+<div class="glass-panel p-6 w-80 border-l-4 border-primary-container">
+<div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4">Neural_Latency_Metrics</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">NODE_A</span>
+<span class="text-primary-container font-mono text-xl font-bold">1.2ms</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high">
+<div class="h-full bg-primary-container w-[88%] shadow-[0_0_10px_#00f2ff]"></div>
+</div>
+<div class="flex justify-between items-end">
+<span class="text-xs text-on-surface-variant">NODE_B</span>
+<span class="text-primary-container font-mono text-xl font-bold">0.8ms</span>
+</div>
+<div class="w-full h-1 bg-surface-container-high">
+<div class="h-full bg-primary-container w-[95%] shadow-[0_0_10px_#00f2ff]"></div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6 w-64 flex flex-col gap-2">
+<div class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">System_Uptime</div>
+<div class="text-4xl font-bold font-mono tracking-tighter text-on-surface">99.999%</div>
+<div class="flex gap-1">
+<div class="h-1 flex-1 bg-primary-container/20"></div>
+<div class="h-1 flex-1 bg-primary-container/40"></div>
+<div class="h-1 flex-1 bg-primary-container/60"></div>
+<div class="h-1 flex-1 bg-primary-container"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Side Metadata -->
+<div class="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center gap-8 opacity-40">
+<div class="vertical-text text-[10px] tracking-[0.5em] font-medium uppercase">Protocol_V.4.01</div>
+<div class="w-px h-32 bg-on-surface-variant"></div>
+<div class="vertical-text text-[10px] tracking-[0.5em] font-medium uppercase">Nexus_Engine</div>
+</div>
+</main>
+<!-- NEURAL CORE ARCHITECTURE SECTION -->
+<section class="relative bg-surface py-32 px-12">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl font-bold tracking-tighter text-on-surface mb-6">NEURAL CORE<br/>ARCHITECTURE</h2>
+<p class="text-on-surface-variant leading-relaxed">Our proprietary architecture leverages kinetic data streams to minimize entropy across the neural network. Each node operates in a zero-loss environment designed for high-frequency intelligence extraction.</p>
+</div>
+<div class="flex items-center gap-4 border-b border-primary-container/30 pb-2">
+<span class="text-[10px] font-mono text-primary-container">ACTIVE_PROCESSES: 14,209</span>
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+</div>
+</div>
+<!-- BENTO GRID SYSTEM -->
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-[600px]">
+<div class="md:col-span-2 md:row-span-2 glass-panel p-10 border border-white/5 flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-9xl">memory</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-primary-container mb-4">01 // QUANTUM_LATTICE</h3>
+<p class="text-on-surface-variant">The base substrate of the Nexus AI. A non-Euclidean data structure that allows for simultaneous multi-dimensional computation.</p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-[10px] font-mono tracking-widest text-on-surface-variant">
+<span>STABILITY_INDEX</span>
+<span>98.2%</span>
+</div>
+<div class="h-px bg-surface-container-highest w-full overflow-hidden">
+<div class="h-full bg-primary-container w-[98%] shadow-[0_0_10px_#00f2ff]"></div>
+</div>
+</div>
+</div>
+<div class="md:col-span-1 glass-panel p-8 border border-white/5 flex flex-col justify-between hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-primary-container">terminal</span>
+<h3 class="text-lg font-bold">KINETIC_LINK</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest leading-loose">Real-time processing synchronization across all global edge nodes.</p>
+</div>
+<div class="md:col-span-1 glass-panel p-8 border border-white/5 flex flex-col justify-between bg-primary-container text-on-primary-container">
+<span class="material-symbols-outlined">bolt</span>
+<div>
+<div class="text-4xl font-black tracking-tighter mb-1">0.4ns</div>
+<div class="text-[10px] font-bold tracking-widest uppercase">Intra-Node Latency</div>
+</div>
+</div>
+<div class="md:col-span-2 glass-panel p-8 border border-white/5 flex items-center gap-8 group">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container-lowest border border-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary-container group-hover:scale-110 transition-transform">database</span>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-2">AUTONOMOUS_VAULT</h3>
+<p class="text-sm text-on-surface-variant">Cold-storage encryption for long-term intelligence assets using 1024-bit kinetic keys.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SYSTEM STATUS & REAL-TIME METRICS -->
+<section class="py-32 bg-surface-container-lowest relative">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="absolute -top-12 -left-12 text-[100px] font-black text-white/[0.02] pointer-events-none select-none">STATUS</div>
+<h2 class="text-5xl font-bold tracking-tighter text-on-surface mb-10">AUTONOMOUS<br/>SYSTEM STATUS</h2>
+<div class="space-y-1">
+<div class="flex items-center justify-between p-5 bg-surface-container-low border-l-2 border-primary-container">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium tracking-widest uppercase">Neural Core Alpha</span>
+</div>
+<span class="text-xs font-mono text-on-surface-variant">OPERATIONAL</span>
+</div>
+<div class="flex items-center justify-between p-5 bg-surface-container-low border-l-2 border-primary-container">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium tracking-widest uppercase">Kinetic Bridge</span>
+</div>
+<span class="text-xs font-mono text-on-surface-variant">OPERATIONAL</span>
+</div>
+<div class="flex items-center justify-between p-5 bg-surface-container-low border-l-2 border-primary-container/30">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container/40">sync</span>
+<span class="text-sm font-medium tracking-widest uppercase text-on-surface-variant">Global Sync V.2</span>
+</div>
+<span class="text-xs font-mono text-primary-container">SYNCHRONIZING</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-10 flex flex-col gap-4 border border-white/5 h-64 justify-center items-center text-center">
+<div class="text-[10px] tracking-[0.3em] uppercase text-on-surface-variant">Throughput</div>
+<div class="text-5xl font-bold text-primary-container">4.2 PB</div>
+<div class="text-[10px] font-mono text-on-surface-variant">DATA/SEC</div>
+</div>
+<div class="glass-panel p-10 flex flex-col gap-4 border border-white/5 h-64 justify-center items-center text-center">
+<div class="text-[10px] tracking-[0.3em] uppercase text-on-surface-variant">Global Reach</div>
+<div class="text-5xl font-bold text-primary-container">142</div>
+<div class="text-[10px] font-mono text-on-surface-variant">NODES_ONLINE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER SHELL -->
+<footer class="bg-neutral-950 w-full py-12 flex flex-col md:flex-row justify-between items-center px-12 font-space-grotesk text-[10px] uppercase tracking-[0.1em]">
+<div class="text-neutral-600 mb-6 md:mb-0">
+            © 2024 NEXUS ENGINE PVT_LTD
+        </div>
+<div class="flex gap-10">
+<a class="text-neutral-600 hover:text-cyan-400 hover:underline underline-offset-4 transition-all" href="#">PROTOCOL_V4</a>
+<a class="text-neutral-600 hover:text-cyan-400 hover:underline underline-offset-4 transition-all" href="#">SYSTEM_STATUS</a>
+<a class="text-neutral-600 hover:text-cyan-400 hover:underline underline-offset-4 transition-all" href="#">ENCRYPTION_DOCS</a>
+</div>
+<div class="mt-6 md:mt-0 flex items-center gap-4">
+<div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+<span class="text-cyan-500">All systems optimal</span>
+</div>
+</footer>
+<!-- SCANLINE OVERLAY EFFECT -->
+<div class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
+<div id="root" class="fixed inset-0 z-[-1] pointer-events-none"></div>
+<script type="module" src="/src/main.tsx"></script>
+</body></html>
